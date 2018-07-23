@@ -3,8 +3,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require( 'mongoose' );
 // var bodyParser = require('body-parser')
-require('./db')
+var Todo = require('./models/Todos')
+mongoose.connect( 'mongodb://localhost:27017/express-todo', {useNewUrlParser: true});
 
 var routes = require('./routes');
 // var usersRouter = require('./routes/users');
